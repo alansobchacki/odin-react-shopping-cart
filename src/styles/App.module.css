@@ -1,0 +1,51 @@
+/* 
+//// global rules ////
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p {
+  color: white;
+}
+
+.main {
+  background-color: black;
+}
+
+/* 
+//// css rules for smartphones ////
+*/
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100%;
+}
+
+/* 
+//// css rules for tablets / smartphones on horizontal viewport ////
+*/
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* */
+}
+
+/* 
+//// css rules for desktop devices ////
+*/
+
+@media (min-width: 1024px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100%;
+  }
+}
