@@ -1,17 +1,30 @@
-// import { useState } from 'react'
-// import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import styles from "../styles/App.module.css";
 
 function App() {
+  const [cartCount, setCartCount] = useState(0);
+
+  function handleAddProductClick() {
+    setCartCount(cartCount + 1);
+  }
+
+  function handleRemoveProductClick() {
+    if (cartCount - 1 >= 0) {
+      setCartCount(cartCount - 1);
+    }
+  }
+
   return (
-    <div className={styles.main}>
-      <Navbar />
-      <h1>[This is the main page!]</h1>
-      <p>[Stuff inside brackets are placeholders!]</p>
+    <>
+      <Navbar cart={cartCount} />
+      {/* This will render the matched child route (home, shop, about) */}
+      <Outlet />
+      <button onClick={handleAddProductClick}>Buy more stuff!</button>
+      <button onClick={handleRemoveProductClick}>No you gotta consooom!</button>
       <Footer />
-    </div>
+    </>
   );
 }
 
