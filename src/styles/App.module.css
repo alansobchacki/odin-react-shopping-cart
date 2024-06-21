@@ -7,11 +7,6 @@ body {
   padding: 0;
 }
 
-h1,
-p {
-  color: white;
-}
-
 .main {
   background-color: black;
 }
@@ -23,8 +18,9 @@ p {
 .main {
   display: flex;
   flex-direction: column;
+  color: white;
 
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 

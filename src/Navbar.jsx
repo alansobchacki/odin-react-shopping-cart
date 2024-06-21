@@ -6,7 +6,6 @@ function Navbar() {
     <div className={styles.navbar}>
       <h2 className={styles.title}>[SweatshopLogotype]</h2>
 
-      {/* only shows on desktop devices */}
       <nav className={styles.items}>
         <ul>
           <li className={styles.item}>
