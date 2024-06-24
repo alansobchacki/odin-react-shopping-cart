@@ -21,7 +21,9 @@ function Navbar({ cart }) {
         </ul>
       </nav>
 
-      <h2 className={styles.cart}>Cart: {cart}</h2>
+      <h2 className={styles.cart}>
+        <Link to="/cart">Cart: {cart}</Link>
+      </h2>
 
       {/* only shows on mobile devices */}
       <h2 className={styles.hamburger}>[=]</h2>

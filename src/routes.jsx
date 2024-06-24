@@ -1,4 +1,5 @@
 import App from "./components/App";
+import Cart from "./components/Cart";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import About from "./components/About";
@@ -23,6 +24,11 @@ const routes = [
       {
         path: "about",
         element: <About />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
         errorElement: <ErrorPage />,
       },
     ],

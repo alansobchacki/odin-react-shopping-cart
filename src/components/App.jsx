@@ -5,12 +5,13 @@ import Footer from "./Footer";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
-  function handleAddProductClick() {
+  function handleAddClick() {
     setCartCount(cartCount + 1);
   }
 
-  function handleRemoveProductClick() {
+  function handleRemoveClick() {
     if (cartCount - 1 >= 0) {
       setCartCount(cartCount - 1);
     }
@@ -19,10 +20,15 @@ function App() {
   return (
     <>
       <Navbar cart={cartCount} />
-      {/* This will render the matched child route (home, shop, about) */}
-      <Outlet />
-      <button onClick={handleAddProductClick}>Buy more stuff!</button>
-      <button onClick={handleRemoveProductClick}>No you gotta consooom!</button>
+      <Outlet
+        context={{
+          handleAddClick,
+          handleRemoveClick,
+          cartCount,
+          setCartItems,
+          cartItems,
+        }}
+      />
       <Footer />
     </>
   );
