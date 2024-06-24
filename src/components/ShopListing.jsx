@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-function Listing({ name, price, onAdd, onRemove, setCartItems }) {
-  const [listingCount, setListingCount] = useState(0);
+function ShopListing({ name, price, onAdd, onRemove, setCartItems }) {
+  const [listingCount, setShopListingCount] = useState(0);
 
   function handleAddClick() {
     // Increment the listing count
-    setListingCount(listingCount + 1);
+    setShopListingCount(listingCount + 1);
 
     setCartItems((prevCartItems) => {
       // Check if the item was already added to cartItems
@@ -35,7 +35,7 @@ function Listing({ name, price, onAdd, onRemove, setCartItems }) {
   function handleRemoveClick() {
     if (listingCount > 0) {
       // Decrement the listing count
-      setListingCount(listingCount - 1);
+      setShopListingCount(listingCount - 1);
 
       // Use the functional form of setCartItems
       setCartItems((prevCartItems) => {
@@ -76,4 +76,4 @@ function Listing({ name, price, onAdd, onRemove, setCartItems }) {
   );
 }
 
-export default Listing;
+export default ShopListing;

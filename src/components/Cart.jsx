@@ -1,7 +1,9 @@
 import { useOutletContext } from "react-router-dom";
+import CartListing from "./CartListing";
 
 function Cart() {
-  const { cartCount, cartItems } = useOutletContext();
+  const { handleAddClick, handleRemoveClick, cartCount, cartItems } =
+    useOutletContext();
 
   let totalPrice = 0;
 
@@ -14,14 +16,18 @@ function Cart() {
       <p>ooooo you bought: {cartCount}</p>
       <p>Your stuff:</p>
       {cartItems.map((item, index) => (
-        <div key={index}>
-          <p>{item.name}</p>
-          <p>{item.price}</p>
-          <p>{item.count}</p>
-        </div>
+        <CartListing
+          key={index}
+          name={item.name}
+          price={item.price}
+          count={item.count}
+          onAdd={handleAddClick}
+          onRemove={handleRemoveClick}
+        />
       ))}
 
       <p>Total price: {totalPrice}</p>
+      <button>Checkout</button>
     </>
   );
 }

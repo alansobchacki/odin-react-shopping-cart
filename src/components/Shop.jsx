@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { products } from "../data";
-import Listing from "./ShopListing";
+import ShopListing from "./ShopListing";
 import styles from "../styles/Shop.module.css";
 
 function Shop() {
@@ -10,7 +10,7 @@ function Shop() {
   return (
     <div className={styles.main}>
       {products.map((listing) => (
-        <Listing
+        <ShopListing
           key={listing.id}
           name={listing.name}
           price={listing.price}
