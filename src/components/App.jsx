@@ -7,11 +7,11 @@ function App() {
   const [cartCount, setCartCount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
 
-  function handleAddClick() {
+  function handleShopAddClick() {
     setCartCount(cartCount + 1);
   }
 
-  function handleRemoveClick() {
+  function handleShopRemoveClick() {
     if (cartCount - 1 >= 0) {
       setCartCount(cartCount - 1);
     }
@@ -22,8 +22,8 @@ function App() {
       <Navbar cart={cartCount} />
       <Outlet
         context={{
-          handleAddClick,
-          handleRemoveClick,
+          handleShopAddClick,
+          handleShopRemoveClick,
           cartCount,
           setCartItems,
           cartItems,

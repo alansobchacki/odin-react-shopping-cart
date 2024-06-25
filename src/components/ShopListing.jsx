@@ -1,49 +1,53 @@
 import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
-function ShopListing({ name, price, onAdd, onRemove, setCartItems }) {
+function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
   const [listingCount, setShopListingCount] = useState(0);
 
+  // Handles the + button on items in our shop. When clicked, it will:
+  // 1 - Update the number in our shopping cart icon by += 1.
+  // 2 - Check if our shopping cart already has that item. If so, increase its count and value.
+  // 3 - Otherwise, add this new product to our shopping cart.
   function handleAddClick() {
-    // Increment the listing count
     setShopListingCount(listingCount + 1);
 
     setCartItems((prevCartItems) => {
-      // Check if the item was already added to cartItems
       const itemIndex = prevCartItems.findIndex((item) => item.name === name);
 
-      // If the item was already added, we update its price and count values
       if (itemIndex !== -1) {
         return prevCartItems.map((item, index) =>
           index === itemIndex
-            ? { ...item, price: item.price + price, count: item.count + 1 }
+            ? {
+                ...item,
+                id: index,
+                price: item.price + price,
+                count: item.count + 1,
+              }
             : item
         );
       }
 
-      // If the item was not added, add it to the cart
       return [
         ...prevCartItems,
-        { name: name, count: listingCount + 1, price: price },
+        { name: name, id: id, count: listingCount + 1, price: price },
       ];
     });
 
-    // Then the shopping cart counter is updated.
     onAdd();
   }
 
+  // Handles the - button on items in our shop. When clicked, it will:
+  // 1 - Update the number in our shopping cart icon by -= 1. Will not run if its 0.
+  // 2 - Check if our shopping cart already has that item. If so, decrease its count and value.
+  // 3 - If the item is decreased to 0, it is removed from our shopping cart.
   function handleRemoveClick() {
     if (listingCount > 0) {
-      // Decrement the listing count
       setShopListingCount(listingCount - 1);
 
-      // Use the functional form of setCartItems
       setCartItems((prevCartItems) => {
-        // Check if the item already exists in the cart
         const itemIndex = prevCartItems.findIndex((item) => item.name === name);
 
         if (itemIndex !== -1) {
-          // If the item count is greater than 1, decrease its count and adjust the price
           if (prevCartItems[itemIndex].count > 1) {
             return prevCartItems.map((item, index) =>
               index === itemIndex
@@ -51,16 +55,13 @@ function ShopListing({ name, price, onAdd, onRemove, setCartItems }) {
                 : item
             );
           } else {
-            // If the item count is 1, remove the item from the cart
             return prevCartItems.filter((_, index) => index !== itemIndex);
           }
         }
 
-        // If the item is not found, return the previous state
         return prevCartItems;
       });
 
-      // Then the shopping cart counter is updated.
       onRemove();
     }
   }

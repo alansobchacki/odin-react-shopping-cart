@@ -4,7 +4,7 @@ import ShopListing from "./ShopListing";
 import styles from "../styles/Shop.module.css";
 
 function Shop() {
-  const { handleAddClick, handleRemoveClick, setCartItems } =
+  const { handleShopAddClick, handleShopRemoveClick, setCartItems } =
     useOutletContext();
 
   return (
@@ -12,10 +12,11 @@ function Shop() {
       {products.map((listing) => (
         <ShopListing
           key={listing.id}
+          id={listing.id}
           name={listing.name}
           price={listing.price}
-          onAdd={handleAddClick}
-          onRemove={handleRemoveClick}
+          onAdd={handleShopAddClick}
+          onRemove={handleShopRemoveClick}
           setCartItems={setCartItems}
         />
       ))}

@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import CartListing from "./CartListing";
 
 function Cart() {
-  const { handleAddClick, handleRemoveClick, cartCount, cartItems } =
+  const { handleShopAddClick, handleShopRemoveClick, cartItems, setCartItems } =
     useOutletContext();
 
   let totalPrice = 0;
@@ -13,16 +13,17 @@ function Cart() {
 
   return (
     <>
-      <p>ooooo you bought: {cartCount}</p>
       <p>Your stuff:</p>
       {cartItems.map((item, index) => (
         <CartListing
           key={index}
+          id={item.id}
           name={item.name}
           price={item.price}
           count={item.count}
-          onAdd={handleAddClick}
-          onRemove={handleRemoveClick}
+          onAdd={handleShopAddClick}
+          onRemove={handleShopRemoveClick}
+          setCartItems={setCartItems}
         />
       ))}
 
