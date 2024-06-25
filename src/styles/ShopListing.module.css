@@ -1,0 +1,53 @@
+/* 
+//// css rules for smartphones ////
+*/
+
+/* 
+//// css rules for tablets / smartphones on horizontal viewport ////
+*/
+
+/* CSS rules for desktop devices */
+@media (min-width: 1024px) {
+  .item {
+    display: grid;
+    grid-template-rows: 0.5fr 0.3fr 0.2fr 0.2fr;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    min-height: 300px;
+  }
+
+  .image {
+    grid-area: 1 / 1 / span 5 / span 1;
+    width: 350px;
+    height: 350px;
+    background-color: gray;
+  }
+
+  .name,
+  .price,
+  .addButton,
+  .removeButton {
+    grid-column: 2 / 3;
+  }
+
+  .name {
+    grid-row: 1 / 2;
+    font-size: 40px;
+  }
+
+  .price {
+    grid-row: 2 / 3;
+  }
+
+  .addButton {
+    grid-row: 3 / 4;
+    width: 100px;
+    height: 40px;
+  }
+
+  .removeButton {
+    grid-row: 4 / 5;
+    width: 100px;
+    height: 40px;
+  }
+}

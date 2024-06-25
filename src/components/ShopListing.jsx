@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import styles from "../styles/ShopListing.module.css";
 
 function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
   const [listingCount, setShopListingCount] = useState(0);
@@ -67,12 +68,16 @@ function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
   }
 
   return (
-    <div>
-      <p>{name}</p>
-      <p>{price.toFixed(2)}</p>
-      <p>Number of items you bought: {listingCount}</p>
-      <button onClick={handleAddClick}>+</button>
-      <button onClick={handleRemoveClick}>-</button>
+    <div className={styles.item}>
+      <p className={styles.image}></p>
+      <p className={styles.name}>{name}</p>
+      <p className={styles.price}>{price.toFixed(2)}</p>
+      <button className={styles.addButton} onClick={handleAddClick}>
+        Add To Cart
+      </button>
+      <button className={styles.removeButton} onClick={handleRemoveClick}>
+        Remove From Cart
+      </button>
     </div>
   );
 }
