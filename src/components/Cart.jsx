@@ -27,7 +27,12 @@ function Cart() {
         />
       ))}
 
-      <p>Total price: {totalPrice}</p>
+      {totalPrice === 0 ? (
+        <p>Your cart is empty ;_;</p>
+      ) : (
+        <p>{totalPrice.toFixed(2)}</p>
+      )}
+
       <button>Checkout</button>
     </>
   );

@@ -10,9 +10,6 @@ function cartListing({
   setCartItems,
 }) {
   function handleCartAddClick() {
-    console.log(id);
-
-    onAdd();
     setCartItems((prevItems) =>
       prevItems.map((item) =>
         item.id === id
@@ -24,31 +21,38 @@ function cartListing({
           : item
       )
     );
+
+    onAdd();
   }
 
   function handleCartRemoveClick() {
-    onRemove();
     setCartItems((prevItems) => {
-      if (prevItems[id].count > 1) {
-        return prevItems.map((item) =>
-          item.id === id
-            ? {
-                ...item,
-                price: item.price - products[id].price,
-                count: item.count - 1,
-              }
-            : item
-        );
-      } else {
-        return prevItems.filter((_, index) => index !== id);
+      const itemIndex = prevItems.findIndex((item) => item.name === name);
+
+      if (itemIndex !== -1) {
+        if (prevItems[itemIndex].count > 1) {
+          return prevItems.map((item) =>
+            item.id === id
+              ? {
+                  ...item,
+                  price: item.price - products[id].price,
+                  count: item.count - 1,
+                }
+              : item
+          );
+        } else {
+          return prevItems.filter((_, index) => index !== itemIndex);
+        }
       }
     });
+
+    onRemove();
   }
 
   return (
     <div>
       <p>Name: {name}</p>
-      <p>Price: {price}</p>
+      <p>Price: {price.toFixed(2)}</p>
       <p>Item count: {count}</p>
       <button onClick={handleCartAddClick}>+</button>
       <button onClick={handleCartRemoveClick}>-</button>

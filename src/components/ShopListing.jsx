@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-// eslint-disable-next-line react/prop-types
 function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
   const [listingCount, setShopListingCount] = useState(0);
 
@@ -19,7 +19,7 @@ function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
           index === itemIndex
             ? {
                 ...item,
-                id: index,
+                id: id,
                 price: item.price + price,
                 count: item.count + 1,
               }
@@ -69,7 +69,7 @@ function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
   return (
     <div>
       <p>{name}</p>
-      <p>{price}</p>
+      <p>{price.toFixed(2)}</p>
       <p>Number of items you bought: {listingCount}</p>
       <button onClick={handleAddClick}>+</button>
       <button onClick={handleRemoveClick}>-</button>
