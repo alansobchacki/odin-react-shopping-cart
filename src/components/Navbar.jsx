@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 import styles from "../styles/Navbar.module.css";
 
 function Navbar({ cart }) {
   return (
     <div className={styles.navbar}>
-      <h2 className={styles.title}>[SweatshopLogotype]</h2>
+      <img className={styles.logo} src={logo} />
 
       <nav className={styles.items}>
         <ul>
@@ -21,9 +22,13 @@ function Navbar({ cart }) {
         </ul>
       </nav>
 
-      <h2 className={styles.cart}>
-        <Link to="/cart">Cart: {cart}</Link>
-      </h2>
+      <nav className={styles.items}>
+        <ul>
+          <li className={styles.cart}>
+            <Link to="/cart">Cart: {cart}</Link>
+          </li>
+        </ul>
+      </nav>
 
       {/* only shows on mobile devices */}
       <h2 className={styles.hamburger}>[=]</h2>
