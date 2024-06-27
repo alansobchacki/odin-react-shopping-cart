@@ -5,7 +5,7 @@ import styles from "../styles/Navbar.module.css";
 
 function Navbar({ cart }) {
   return (
-    <div className={styles.navbar}>
+    <div id={styles.navbar}>
       <img className={styles.logo} src={logo} />
 
       <nav className={styles.items}>

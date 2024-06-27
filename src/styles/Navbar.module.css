@@ -94,7 +94,7 @@
 */
 
 @media (min-width: 1024px) {
-  .navbar {
+  #navbar {
     display: grid;
     grid-template: 1fr / 0.6fr 1fr 0.3fr;
     justify-items: center;
@@ -121,19 +121,19 @@
     display: none;
   }
 
-  .navbar ul {
+  #navbar ul {
     display: flex;
   }
 
-  .navbar a {
+  #navbar a {
     text-decoration: none;
     font-size: 1.5rem;
     padding: 10px;
     margin: 0 10px;
   }
 
-  .navbar li a:visited,
-  .navbar li a:active {
+  #navbar li a:visited,
+  #navbar li a:active {
     color: black; /* Ensure visited and active links are the same color */
   }
 

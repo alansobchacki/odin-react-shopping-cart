@@ -4,9 +4,9 @@ import linkedinLogo from "../assets/linkedin.png";
 
 function Footer() {
   return (
-    <div className={styles.footer}>
+    <div id={styles.footer}>
       <p>
-        This is a fictional store built as an assignment from{" "}
+        This is a fictional store built with React as an assignment from{" "}
         <a href="https://www.theodinproject.com/dashboard">The Odin Project.</a>
       </p>
       <div id={styles.logos}>

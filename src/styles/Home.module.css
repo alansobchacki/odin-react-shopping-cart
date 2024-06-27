@@ -33,29 +33,79 @@ body {
 */
 
 @media (min-width: 1024px) {
-  .main {
+  #main {
     display: flex;
     flex-direction: column;
 
     width: 100%;
   }
 
-  .photo {
-    min-height: 900px;
-  }
-
-  .main p,
-  h1 {
+  #main {
     font-family: "Quicksand", sans-serif;
     color: black;
     text-align: center;
   }
 
-  .main h1 {
+  #main h1 {
     font-size: 2rem;
   }
 
-  .main p {
+  #main p {
     font-size: 1.5rem;
+  }
+
+  #top {
+    min-height: 900px;
+  }
+
+  #mid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5%;
+  }
+
+  .photo {
+    border-radius: 5px;
+    width: 500px;
+  }
+
+  #bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #buy_now {
+    background-color: #cebe93;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 6px;
+    width: 160px;
+    height: 40px;
+    font-family: inherit;
+    margin-bottom: 5%;
+  }
+
+  #buy_now a {
+    color: black;
+    text-decoration: none;
+  }
+
+  #buy_now a:visited {
+    color: black;
+  }
+
+  #buy_now:hover {
+    cursor: pointer;
+  }
+
+  #logo {
+    width: 325px;
+    margin-bottom: 5%;
   }
 }
