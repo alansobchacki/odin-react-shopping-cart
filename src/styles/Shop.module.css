@@ -7,15 +7,11 @@ body {
   padding: 0;
 }
 
-.main {
-  background-color: black;
-}
-
 /* 
 //// css rules for smartphones ////
 */
 
-.main {
+#main {
   display: flex;
   flex-direction: column;
   color: white;
@@ -37,12 +33,14 @@ body {
 */
 
 @media (min-width: 1024px) {
-  .main {
+  #main {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 
     width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 }

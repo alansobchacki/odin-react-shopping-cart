@@ -2,7 +2,15 @@
 import { useState } from "react";
 import styles from "../styles/ShopListing.module.css";
 
-function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
+function ShopListing({
+  id,
+  name,
+  price,
+  image,
+  onAdd,
+  onRemove,
+  setCartItems,
+}) {
   const [listingCount, setShopListingCount] = useState(0);
 
   // Handles the + button on items in our shop. When clicked, it will:
@@ -69,15 +77,27 @@ function ShopListing({ id, name, price, onAdd, onRemove, setCartItems }) {
 
   return (
     <div className={styles.item}>
-      <p className={styles.image}></p>
-      <p className={styles.name}>{name}</p>
-      <p className={styles.price}>{price.toFixed(2)}</p>
-      <button className={styles.addButton} onClick={handleAddClick}>
-        Add To Cart
-      </button>
-      <button className={styles.removeButton} onClick={handleRemoveClick}>
-        Remove From Cart
-      </button>
+      <div className={styles.left}>
+        <img src={image} className={styles.image} />
+      </div>
+
+      <div className={styles.right}>
+        <p className={styles.name}>{name}</p>
+        <p className={styles.price}>$ {price.toFixed(2)}</p>
+
+        {listingCount >= 1 && (
+          <p>
+            You&apos;ve added {name} to your cart {listingCount} times.
+          </p>
+        )}
+
+        <button className={styles.addButton} onClick={handleAddClick}>
+          Add To Cart
+        </button>
+        <button className={styles.removeButton} onClick={handleRemoveClick}>
+          Remove From Cart
+        </button>
+      </div>
     </div>
   );
 }

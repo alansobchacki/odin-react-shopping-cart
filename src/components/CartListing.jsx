@@ -1,5 +1,3 @@
-import { products } from "../data";
-
 function cartListing({
   id,
   name,
@@ -9,6 +7,8 @@ function cartListing({
   onRemove,
   setCartItems,
 }) {
+  const initialPrice = 2;
+
   function handleCartAddClick() {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -16,7 +16,7 @@ function cartListing({
           ? {
               ...item,
               count: item.count + 1,
-              price: item.price + products[id].price,
+              price: item.price + initialPrice,
             }
           : item
       )
@@ -35,7 +35,7 @@ function cartListing({
             item.id === id
               ? {
                   ...item,
-                  price: item.price - products[id].price,
+                  price: item.price - initialPrice,
                   count: item.count - 1,
                 }
               : item
