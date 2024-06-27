@@ -8,4 +8,15 @@
   background-color: black;
 
   margin-top: auto;
+  padding-bottom: 2%;
+}
+
+.logo {
+  width: 25px;
+  transition: transform 0.8s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2) rotate(360deg);
+  cursor: pointer;
 }
