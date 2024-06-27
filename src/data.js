@@ -1,3 +1,6 @@
+// We fetch our data from FakeStore API here
+// We combine two API calls to get both women and men's clothing items
+
 async function getProducts() {
   try {
     const [menResponse, womenResponse] = await Promise.all([
@@ -10,7 +13,6 @@ async function getProducts() {
       womenResponse.json(),
     ]);
 
-    // Combine the two arrays
     const products = [...menProducts, ...womenProducts];
     return products;
   } catch (error) {
