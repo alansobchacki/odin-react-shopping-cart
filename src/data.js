@@ -1,7 +1,17 @@
 async function getProducts() {
   try {
-    const response = await fetch("https://fakestoreapi.com/products?limit=12");
-    const products = await response.json();
+    const [menResponse, womenResponse] = await Promise.all([
+      fetch("https://fakestoreapi.com/products/category/men's clothing"),
+      fetch("https://fakestoreapi.com/products/category/women's clothing"),
+    ]);
+
+    const [menProducts, womenProducts] = await Promise.all([
+      menResponse.json(),
+      womenResponse.json(),
+    ]);
+
+    // Combine the two arrays
+    const products = [...menProducts, ...womenProducts];
     return products;
   } catch (error) {
     console.error("Error fetching products:", error);
