@@ -38,7 +38,13 @@ function ShopListing({
 
       return [
         ...prevCartItems,
-        { name: name, id: id, count: listingCount + 1, price: price },
+        {
+          name: name,
+          id: id,
+          image: image,
+          count: listingCount + 1,
+          price: price,
+        },
       ];
     });
 
@@ -85,7 +91,11 @@ function ShopListing({
         <p className={styles.name}>{name}</p>
         <p className={styles.price}>$ {price.toFixed(2)}</p>
 
-        {listingCount >= 1 && (
+        {listingCount == 1 && (
+          <p>You&apos;ve added {name} to your cart. Click again to add more!</p>
+        )}
+
+        {listingCount >= 2 && (
           <p>
             You&apos;ve added {name} to your cart {listingCount} times.
           </p>

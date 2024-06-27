@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import CartListing from "./CartListing";
+import styles from "../styles/Cart.module.css";
 
 function Cart() {
   const { handleShopAddClick, handleShopRemoveClick, cartItems, setCartItems } =
@@ -12,29 +13,37 @@ function Cart() {
   });
 
   return (
-    <>
-      <p>Your stuff:</p>
-      {cartItems.map((item, index) => (
-        <CartListing
-          key={index}
-          id={item.id}
-          name={item.name}
-          price={item.price}
-          count={item.count}
-          onAdd={handleShopAddClick}
-          onRemove={handleShopRemoveClick}
-          setCartItems={setCartItems}
-        />
-      ))}
+    <div id={styles.main}>
+      <div id={styles.items}>
+        {cartItems.map((item, index) => (
+          <CartListing
+            key={index}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            image={item.image}
+            count={item.count}
+            onAdd={handleShopAddClick}
+            onRemove={handleShopRemoveClick}
+            setCartItems={setCartItems}
+          />
+        ))}
 
-      {totalPrice === 0 ? (
-        <p>Your cart is empty ;_;</p>
-      ) : (
-        <p>{totalPrice.toFixed(2)}</p>
-      )}
+        {totalPrice === 0 && (
+          <p>Your cart is empty, please buy something 😊👉👈</p>
+        )}
 
-      <button>Checkout</button>
-    </>
+        {totalPrice >= 1 && (
+          <>
+            <p id={styles.total_price}>
+              Total price: <b>{totalPrice.toFixed(2)}</b>
+            </p>
+
+            <button id={styles.checkout}>Checkout</button>
+          </>
+        )}
+      </div>
+    </div>
   );
 }
 

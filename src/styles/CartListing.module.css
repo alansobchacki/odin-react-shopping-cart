@@ -1,0 +1,63 @@
+/* css rules for smartphones */
+
+.item {
+  font-family: "Quicksand", sans-serif;
+  color: black;
+}
+
+.item button {
+  font-family: inherit;
+}
+
+/* 
+//// css rules for tablets / smartphones on horizontal viewport ////
+*/
+
+/* CSS rules for desktop devices */
+@media (min-width: 1024px) {
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+
+    border-left: 2px solid rgb(236, 236, 236);
+    padding-left: 5%;
+    width: 70%;
+    height: 400px;
+  }
+
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .image {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .price {
+    font-size: 2rem;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .item button:hover {
+    cursor: pointer;
+  }
+
+  .add_button,
+  .remove_button {
+    width: 60px;
+    height: 40px;
+  }
+}
