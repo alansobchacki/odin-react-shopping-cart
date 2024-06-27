@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import CartListing from "./CartListing";
 import styles from "../styles/Cart.module.css";
 
@@ -39,7 +39,9 @@ function Cart() {
               Total price: <b>{totalPrice.toFixed(2)}</b>
             </p>
 
-            <button id={styles.checkout}>Checkout</button>
+            <button id={styles.checkout}>
+              <Link to="/about">Checkout</Link>
+            </button>
           </>
         )}
       </div>

@@ -13,6 +13,15 @@
   width: 100%;
 }
 
+#main a {
+  text-decoration: none;
+}
+
+#main a:visited,
+#main a:active {
+  color: black;
+}
+
 /* 
 //// css rules for tablets / smartphones on horizontal viewport ////
 */

@@ -40,7 +40,7 @@ function About() {
         </p>
         <br></br>
 
-        <p>And that&apos;it. Now give me a job or something.</p>
+        <p>And that&apos;s it. Now give me a job or something.</p>
       </div>
 
       <img id={styles.logo} src={logo}></img>

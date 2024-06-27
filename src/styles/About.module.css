@@ -12,6 +12,15 @@
   width: 100%;
 }
 
+#main a {
+  text-decoration: none;
+}
+
+#main a:visited,
+#main a:active {
+  color: black;
+}
+
 #logo {
   width: 325px;
   margin-bottom: 5%;
