@@ -1,14 +1,14 @@
-/* 
-//// css rules for smartphones ////
-*/
+/* overall / mobile css rules */
 
 #main {
   display: flex;
   flex-direction: column;
-  color: white;
-  background-color: rgb(236, 236, 236);
+  align-items: center;
 
-  min-height: 100vh;
+  font-family: "Quicksand", sans-serif;
+  color: black;
+  text-align: center;
+
   width: 100%;
 }
 
@@ -21,38 +21,26 @@
   color: black;
 }
 
+#wall_of_text {
+  font-size: 1.25rem;
+  width: 80%;
+}
+
 #logo {
-  width: 325px;
+  width: 225px;
   margin-bottom: 5%;
 }
 
-/* 
-//// css rules for tablets / smartphones on horizontal viewport ////
-*/
-
-@media (min-width: 600px) and (max-width: 1024px) {
-  /* */
-}
-
-/* 
-//// css rules for desktop devices ////
-*/
+/* CSS rules for desktop devices */
 
 @media (min-width: 1024px) {
-  #main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: "Quicksand", sans-serif;
-    color: black;
-    text-align: center;
-
-    width: 100%;
-  }
-
   #wall_of_text {
     font-size: 1.35rem;
     width: 80%;
+  }
+
+  #logo {
+    width: 325px;
+    margin-bottom: 5%;
   }
 }
