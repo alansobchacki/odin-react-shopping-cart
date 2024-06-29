@@ -20,14 +20,6 @@ body {
 }
 
 /* 
-//// css rules for tablets / smartphones on horizontal viewport ////
-*/
-
-@media (min-width: 600px) and (max-width: 1024px) {
-  /* */
-}
-
-/* 
 //// css rules for desktop devices ////
 */
 
