@@ -21,7 +21,14 @@
   width: 120px;
 }
 
+#hamburger_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 #hamburger {
+  position: relative;
   width: 30px;
 }
 
@@ -52,6 +59,23 @@
   padding: 20px;
 }
 
+#cart_count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  right: -10px;
+
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #cebe93;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+}
+
 /* tablets / smartphones on horizontal view css rules */
 
 @media (min-width: 600px) and (max-width: 1024px) {
@@ -72,7 +96,8 @@
     display: block;
   }
 
-  #hamburger {
+  #hamburger,
+  #cart_count {
     display: none;
   }
 
@@ -126,7 +151,8 @@
     width: 200px;
   }
 
-  #hamburger {
+  #hamburger,
+  #cart_count {
     display: none;
   }
 

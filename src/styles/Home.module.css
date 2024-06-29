@@ -17,10 +17,12 @@ body {
 
 #main h1 {
   font-size: 1.3rem;
+  margin: 10px;
 }
 
 #main p {
   font-size: 0.9rem;
+  margin: 10px;
 }
 
 #mid {
@@ -80,10 +82,12 @@ body {
 
   #main h1 {
     font-size: 2rem;
+    margin: 0;
   }
 
   #main p {
     font-size: 1.5rem;
+    margin: 0;
   }
 
   #top {

@@ -16,7 +16,7 @@ function Navbar({ cart }) {
     <>
       {!menuOpen ? (
         <div id={styles.navbar}>
-          <img className={styles.logo} src={logo} />
+          <img className={styles.logo} src={logo} alt="fictional store logo" />
 
           <nav className={styles.items}>
             <ul>
@@ -41,15 +41,23 @@ function Navbar({ cart }) {
           </nav>
 
           {/* only shows on mobile devices */}
-          <img
-            src={hamburgerIcon}
-            id={styles.hamburger}
-            alt="hamburger menu icon"
-            onClick={toggleMenu}
-          ></img>
+          <div id={styles.hamburger_container}>
+            <img
+              src={hamburgerIcon}
+              id={styles.hamburger}
+              alt="hamburger menu icon"
+              onClick={toggleMenu}
+            />
+            {cart >= 1 && (
+              <p id={styles.cart_count} onClick={toggleMenu}>
+                {cart}
+              </p>
+            )}
+          </div>
         </div>
       ) : (
         <div id={styles.hamburger_items}>
+          {/* only shows on mobile devices */}
           <Link to="/" onClick={toggleMenu}>
             Home
           </Link>

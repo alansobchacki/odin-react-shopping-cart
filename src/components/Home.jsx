@@ -16,7 +16,11 @@ function Home() {
 
   return (
     <div id={styles.main}>
-      <img id={styles.top} src={model}></img>
+      <img
+        id={styles.top}
+        src={model}
+        alt="a woman wearing white sneakers, ripped jeans, a white crop-top, sitting on some rocks in a beach."
+      ></img>
       <h1>Protect The Planet / Live To Explore</h1>
       <p>
         Step into the journey of your life with our stylish jeans and sneakers.{" "}
@@ -28,15 +32,23 @@ function Home() {
       <p>Welcome to Fictional Store, where fashion meets freedom.</p>
 
       <div id={styles.mid}>
-        <img className={styles.photo} src={rightDisplay}></img>
-        <img className={styles.photo} src={leftDisplay}></img>
+        <img
+          className={styles.photo}
+          src={rightDisplay}
+          alt="a man wearing blue jeans, white sneakers, a pastel-colored jacket, walking in a beach."
+        ></img>
+        <img
+          className={styles.photo}
+          src={leftDisplay}
+          alt="a woman wearing ripped jeans, white sneakers, a white crop-top, wearing a gray necklace, walking in a beach."
+        ></img>
       </div>
 
       <div id={styles.bottom}>
         <button id={styles.buy_now} onClick={() => handleClick("/shop")}>
           Visit Our Shop
         </button>
-        <img id={styles.logo} src={logo}></img>
+        <img id={styles.logo} src={logo} alt="fictional store logo."></img>
       </div>
     </div>
   );
