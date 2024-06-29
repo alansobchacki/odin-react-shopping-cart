@@ -1,38 +1,75 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import hamburgerIcon from "../assets/hamburger_icon.png";
 import styles from "../styles/Navbar.module.css";
 
 function Navbar({ cart }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <div id={styles.navbar}>
-      <img className={styles.logo} src={logo} />
+    <>
+      {!menuOpen ? (
+        <div id={styles.navbar}>
+          <img className={styles.logo} src={logo} />
 
-      <nav className={styles.items}>
-        <ul>
-          <li className={styles.item}>
-            <Link to="/">Home</Link>
-          </li>
-          <li className={styles.item}>
-            <Link to="/shop">Shop</Link>
-          </li>
-          <li className={styles.item}>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
+          <nav className={styles.items}>
+            <ul>
+              <li className={styles.item}>
+                <Link to="/">Home</Link>
+              </li>
+              <li className={styles.item}>
+                <Link to="/shop">Shop</Link>
+              </li>
+              <li className={styles.item}>
+                <Link to="/about">About</Link>
+              </li>
+            </ul>
+          </nav>
 
-      <nav className={styles.items}>
-        <ul>
-          <li className={styles.cart}>
-            <Link to="/cart">Cart: {cart}</Link>
-          </li>
-        </ul>
-      </nav>
+          <nav className={styles.items}>
+            <ul>
+              <li className={styles.cart}>
+                <Link to="/cart">Cart: {cart}</Link>
+              </li>
+            </ul>
+          </nav>
 
-      {/* only shows on mobile devices */}
-      <h2 className={styles.hamburger}>[=]</h2>
-    </div>
+          {/* only shows on mobile devices */}
+          <img
+            src={hamburgerIcon}
+            id={styles.hamburger}
+            alt="hamburger menu icon"
+            onClick={toggleMenu}
+          ></img>
+        </div>
+      ) : (
+        <div id={styles.hamburger_items}>
+          <Link to="/" onClick={toggleMenu}>
+            Home
+          </Link>
+
+          <Link to="/shop" onClick={toggleMenu}>
+            Shop
+          </Link>
+
+          <Link to="/about" onClick={toggleMenu}>
+            About
+          </Link>
+
+          <Link to="/cart" id={styles.hamburger_cart} onClick={toggleMenu}>
+            Cart: {cart}
+          </Link>
+
+          <a onClick={toggleMenu}>Close</a>
+        </div>
+      )}
+    </>
   );
 }
 

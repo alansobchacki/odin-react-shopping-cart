@@ -21,6 +21,37 @@
   width: 120px;
 }
 
+#hamburger {
+  width: 30px;
+}
+
+#hamburger_items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "Quicksand", sans-serif;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+#hamburger_items a {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: black;
+}
+
+#hamburger_cart {
+  background-color: #cebe93;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  padding: 20px;
+}
+
 /* tablets / smartphones on horizontal view css rules */
 
 @media (min-width: 600px) and (max-width: 1024px) {
@@ -41,11 +72,7 @@
     display: block;
   }
 
-  .item {
-    width: 50px;
-  }
-
-  .hamburger {
+  #hamburger {
     display: none;
   }
 
@@ -54,7 +81,6 @@
   }
 
   #navbar a {
-    position: relative;
     text-decoration: none;
     font-size: 1.5rem;
     color: black;
@@ -100,7 +126,7 @@
     width: 200px;
   }
 
-  .hamburger {
+  #hamburger {
     display: none;
   }
 
