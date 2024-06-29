@@ -6,6 +6,9 @@
 
   background-color: white;
   color: black;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  align-items: center;
 }
 
 .item,
@@ -18,18 +21,15 @@
   width: 120px;
 }
 
-/* 
-//// css rules for tablets / smartphones on horizontal viewport ////
-*/
+/* tablets / smartphones on horizontal view css rules */
 
 @media (min-width: 600px) and (max-width: 1024px) {
   #navbar {
-    display: grid;
-    grid-template: 1fr / 0.6fr 1fr 0.3fr;
-    justify-items: center;
-    align-content: center;
-    align-items: baseline;
+    display: flex;
+    flex-direction: row;
 
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
     height: 70px;
@@ -39,6 +39,10 @@
   .items,
   .cart {
     display: block;
+  }
+
+  .item {
+    width: 50px;
   }
 
   .hamburger {
@@ -53,25 +57,7 @@
     position: relative;
     text-decoration: none;
     font-size: 1.5rem;
-    padding: 10px;
-    margin: 0 10px;
     color: black;
-  }
-
-  #navbar a::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-    transform-origin: left;
-  }
-
-  #navbar a:hover::before {
-    width: 100%;
   }
 
   #navbar li {
@@ -82,6 +68,12 @@
 
   .item {
     display: flex;
+  }
+
+  .cart {
+    background-color: #cebe93;
+    border-radius: 10px;
+    padding: 20px;
   }
 }
 
@@ -94,9 +86,6 @@
     justify-items: center;
     align-content: center;
 
-    font-family: "Quicksand", sans-serif;
-    text-align: center;
-    align-items: center;
     width: 100%;
     height: 100px;
   }
