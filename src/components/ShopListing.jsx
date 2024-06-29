@@ -92,21 +92,25 @@ function ShopListing({
         <p className={styles.price}>$ {price.toFixed(2)}</p>
 
         {listingCount == 1 && (
-          <p>You&apos;ve added {name} to your cart. Click again to add more!</p>
+          <p className={styles.item_count}>
+            You&apos;ve added {name} to your cart. Click again to add more!
+          </p>
         )}
 
         {listingCount >= 2 && (
-          <p>
+          <p className={styles.item_count}>
             You&apos;ve added {name} to your cart {listingCount} times.
           </p>
         )}
 
-        <button className={styles.addButton} onClick={handleAddClick}>
-          Add To Cart
-        </button>
-        <button className={styles.removeButton} onClick={handleRemoveClick}>
-          Remove From Cart
-        </button>
+        <div className={styles.buttons}>
+          <button className={styles.addButton} onClick={handleAddClick}>
+            Add To Cart
+          </button>
+          <button className={styles.removeButton} onClick={handleRemoveClick}>
+            Remove From Cart
+          </button>
+        </div>
       </div>
     </div>
   );
