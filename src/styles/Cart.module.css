@@ -1,6 +1,4 @@
-/* 
-//// css rules for smartphones ////
-*/
+/* overall / mobile css rules */
 
 #main {
   display: flex;
@@ -22,6 +20,35 @@
   color: black;
 }
 
+#items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5%;
+
+  background-color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+  border-radius: 6px;
+  padding: 5%;
+  margin: 5%;
+  width: 80%;
+}
+
+#total_price {
+  font-size: 1.3rem;
+}
+
+#checkout {
+  background-color: #cebe93;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 1.2rem;
+  width: 160px;
+  height: 40px;
+}
+
 /* 
 //// css rules for tablets / smartphones on horizontal viewport ////
 */
@@ -30,9 +57,7 @@
   /* */
 }
 
-/* 
-//// css rules for desktop devices ////
-*/
+/* CSS rules for desktop devices */
 
 @media (min-width: 1024px) {
   #main {
@@ -43,30 +68,11 @@
     width: 100%;
   }
 
-  #items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5%;
-
-    background-color: white;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-
-    border-radius: 6px;
-    padding: 5%;
-    margin: 5%;
-    width: 80%;
-  }
-
   #total_price {
     font-size: 1.75rem;
   }
 
   #checkout {
-    font-size: 1.2rem;
-    background-color: #cebe93;
-    border-radius: 6px;
-    border: 0px;
     width: 200px;
     height: 40px;
     transition: transform 0.8s ease;

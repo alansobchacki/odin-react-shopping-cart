@@ -1,4 +1,4 @@
-/* css rules for smartphones */
+/* overall / mobile css rules */
 
 .item {
   font-family: "Quicksand", sans-serif;
@@ -7,6 +7,22 @@
 
 .item button {
   font-family: inherit;
+}
+
+.buttons {
+  margin-bottom: 10%;
+}
+
+.image {
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;
+}
+
+.add_button,
+.remove_button {
+  width: 50px;
+  height: 30px;
 }
 
 /* 
@@ -49,6 +65,16 @@
     font-size: 2rem;
     margin-top: 0px;
     margin-bottom: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 
   .item button:hover {

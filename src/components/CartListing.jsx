@@ -60,15 +60,18 @@ function cartListing({
         <p className={styles.name}>{name}</p>
         <p className={styles.price}>Price: $ {price.toFixed(2)}</p>
         <p>Item count: {count}</p>
-        <button className={styles.add_button} onClick={handleCartAddClick}>
-          +
-        </button>
-        <button
-          className={styles.remove_button}
-          onClick={handleCartRemoveClick}
-        >
-          -
-        </button>
+
+        <div className={styles.buttons}>
+          <button className={styles.add_button} onClick={handleCartAddClick}>
+            +
+          </button>
+          <button
+            className={styles.remove_button}
+            onClick={handleCartRemoveClick}
+          >
+            -
+          </button>
+        </div>
       </div>
     </div>
   );
