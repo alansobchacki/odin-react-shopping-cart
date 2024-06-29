@@ -1,19 +1,11 @@
-/* 
-//// global rules ////
-*/
+/* overall / mobile css rules */
 
-.navbar {
+#navbar {
+  display: flex;
+  justify-content: space-evenly;
+
   background-color: white;
   color: black;
-}
-
-/* 
-//// css rules for smartphones ////
-*/
-
-.navbar {
-  display: flex;
-  justify-content: space-around;
 }
 
 .item,
@@ -22,12 +14,16 @@
   display: none;
 }
 
+.logo {
+  width: 120px;
+}
+
 /* 
 //// css rules for tablets / smartphones on horizontal viewport ////
 */
 
 @media (min-width: 600px) and (max-width: 1024px) {
-  .navbar {
+  #navbar {
     display: grid;
     grid-template: 1fr / 0.6fr 1fr 0.3fr;
     justify-items: center;
@@ -49,36 +45,36 @@
     display: none;
   }
 
-  .navbar ul {
+  #navbar ul {
     display: flex;
   }
 
-  .navbar a {
-    position: relative; /* Ensure relative positioning for pseudo-element */
+  #navbar a {
+    position: relative;
     text-decoration: none;
     font-size: 1.5rem;
     padding: 10px;
     margin: 0 10px;
-    color: black; /* Text color */
+    color: black;
   }
 
-  .navbar a::before {
+  #navbar a::before {
     content: "";
     position: absolute;
-    bottom: -2px; /* Position the underline below text */
+    bottom: -2px;
     left: 0;
-    width: 0%; /* Start with zero width */
-    height: 2px; /* Thickness of the underline */
-    background-color: #007bff; /* Color of the underline */
-    transition: width 0.3s ease; /* Smooth transition for width */
-    transform-origin: left; /* Animation starts from left */
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+    transform-origin: left;
   }
 
-  .navbar a:hover::before {
-    width: 100%; /* Expand width to 100% on hover */
+  #navbar a:hover::before {
+    width: 100%;
   }
 
-  .navbar li {
+  #navbar li {
     list-style-type: none;
     padding: 10px;
     margin: 0 10px;
@@ -89,9 +85,7 @@
   }
 }
 
-/* 
-//// css rules for desktop devices ////
-*/
+/* css rules for desktop devices */
 
 @media (min-width: 1024px) {
   #navbar {
@@ -134,7 +128,7 @@
 
   #navbar li a:visited,
   #navbar li a:active {
-    color: black; /* Ensure visited and active links are the same color */
+    color: black;
   }
 
   .item {
