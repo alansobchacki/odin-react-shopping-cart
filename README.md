@@ -8,7 +8,7 @@ Here's the [live project demo.](https://odin-react-shopping-cart-three.vercel.ap
 About
 -----
 
-This project was completed as part of [The Odin Project](https://www.theodinproject.com/) [React](https://www.theodinproject.com/paths/full-stack-javascript/courses/react) curriculum. It is the third and final project for completion of the React Course [3/3].
+This project was completed as part of [The Odin Project](https://www.theodinproject.com/) [React](https://www.theodinproject.com/paths/full-stack-javascript/courses/react) curriculum. It is the third and final project required for completion of the React Course [3/3].
 
 These were the project requirements:
 
