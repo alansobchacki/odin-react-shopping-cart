@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+#navbar a {
+  color: black;
+}
+
 .item,
 .items,
 .cart {
