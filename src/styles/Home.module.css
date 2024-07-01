@@ -38,6 +38,13 @@ body {
   width: 250px;
 }
 
+#bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #logo {
   width: 225px;
   margin-bottom: 5%;
@@ -72,13 +79,6 @@ body {
     justify-content: center;
     gap: 15px;
     margin-bottom: 5%;
-  }
-
-  #bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
